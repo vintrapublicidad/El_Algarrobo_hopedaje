@@ -174,3 +174,123 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+// ========== Carrusel Miniaturas ALGARROBO ==========
+(function() {
+    const track = document.getElementById('thumb-track');
+    const prevBtn = document.getElementById('thumb-prev');
+    const nextBtn = document.getElementById('thumb-next');
+    const dotsContainer = document.getElementById('thumb-dots');
+    const lightbox = document.getElementById('alg-lightbox');
+    const lbImg = document.getElementById('alg-lb-img');
+    const lbClose = document.getElementById('alg-lb-close');
+    const lbPrev = document.getElementById('alg-lb-prev');
+    const lbNext = document.getElementById('alg-lb-next');
+    const lbCounter = document.getElementById('alg-lb-counter');
+
+    if (!track) return;
+
+    const items = Array.from(track.querySelectorAll('.thumb-item'));
+    const totalImages = items.length;
+    const VISIBLE = 4; // miniaturas visibles a la vez
+    const totalGroups = Math.ceil(totalImages / VISIBLE);
+    let currentGroup = 0;
+    let lbIndex = 0;
+
+    // Generar dots en el contenedor ya existente en el HTML
+    for (let i = 0; i < totalGroups; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'thumb-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Grupo ${i + 1}`);
+        dot.addEventListener('click', () => goToGroup(i));
+        dotsContainer.appendChild(dot);
+    }
+
+    function getThumbWidth() {
+        if (items[0]) {
+            return items[0].offsetWidth + 8; // ancho + gap
+        }
+        return 110;
+    }
+
+    function goToGroup(group) {
+        currentGroup = Math.max(0, Math.min(group, totalGroups - 1));
+        const offset = currentGroup * VISIBLE * getThumbWidth();
+        track.style.transform = `translateX(-${offset}px)`;
+        // Actualizar dots
+        dotsContainer.querySelectorAll('.thumb-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === currentGroup);
+        });
+        // Actualizar active en thumbs
+        updateActiveThumb();
+    }
+
+    function updateActiveThumb() {
+        items.forEach((item, i) => {
+            const inGroup = Math.floor(i / VISIBLE) === currentGroup;
+            item.classList.toggle('active', inGroup && i === lbIndex);
+        });
+    }
+
+    prevBtn.addEventListener('click', () => goToGroup(currentGroup - 1));
+    nextBtn.addEventListener('click', () => goToGroup(currentGroup + 1));
+
+    // Click en miniatura -> abrir lightbox
+    items.forEach((item, index) => {
+        item.addEventListener('click', () => openLb(index));
+    });
+
+    // === Lightbox ===
+    function openLb(index) {
+        lbIndex = index;
+        lbImg.src = items[index].querySelector('img').src;
+        lbCounter.textContent = `${index + 1} / ${totalImages}`;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        // Marcar miniatura activa
+        items.forEach((it, i) => it.classList.toggle('active', i === index));
+        // Navegar al grupo correcto
+        goToGroup(Math.floor(index / VISIBLE));
+    }
+
+    function closeLb() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function lbGoNext() {
+        openLb((lbIndex + 1) % totalImages);
+    }
+
+    function lbGoPrev() {
+        openLb((lbIndex - 1 + totalImages) % totalImages);
+    }
+
+    lbClose.addEventListener('click', closeLb);
+    lbNext.addEventListener('click', (e) => { e.stopPropagation(); lbGoNext(); });
+    lbPrev.addEventListener('click', (e) => { e.stopPropagation(); lbGoPrev(); });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLb();
+    });
+
+    // Teclado
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLb();
+        if (e.key === 'ArrowRight') lbGoNext();
+        if (e.key === 'ArrowLeft') lbGoPrev();
+    });
+
+    // Swipe móvil en lightbox
+    let swipeStartX = 0;
+    lightbox.addEventListener('touchstart', e => { swipeStartX = e.changedTouches[0].screenX; }, {passive: true});
+    lightbox.addEventListener('touchend', e => {
+        const diff = swipeStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) lbGoNext();
+            else lbGoPrev();
+        }
+    }, {passive: true});
+})();
+
