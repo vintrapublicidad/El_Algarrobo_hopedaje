@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
     --primary: #2D4C4D;
@@ -14,8 +14,8 @@
     --green-muted: #4A7A6F;
     --text: #2D4C4D;
     --text-light: #6A8E8F;
-    --font-serif: "DM Serif Display", serif;
-    --font-sans: "Inter", sans-serif;
+    --font-serif: "Playfair Display", serif;
+    --font-sans: "Montserrat", sans-serif;
     --radius-xl: 50px;
     --radius-lg: 35px;
     --radius-md: 20px;
@@ -35,13 +35,14 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 1.15; }
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 500; line-height: 1.15; }
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
 
 /* --- Utilities --- */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.header-container { width: 100%; margin: 0 auto; padding: 0 5%; }
 
 .section-card {
     background: var(--cream);
@@ -135,26 +136,64 @@ header.scrolled {
     box-shadow: 0 4px 30px rgba(0,0,0,0.15);
 }
 
-nav { display: flex; justify-content: space-between; align-items: center; }
-.logo img { 
-    height: 60px; 
-    border-radius: 50%; 
-    background: rgba(255, 255, 255, 0.95);
-    padding: 5px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    animation: pulseNavLogo 3s infinite alternate;
+header.scrolled .logo-img {
+    height: 90px;
 }
 
-@keyframes pulseNavLogo {
-    0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); }
-    100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+header.scrolled .logo-separator {
+    height: 50px;
 }
-.nav-links { display: flex; gap: 35px; }
+
+header.scrolled .logo-1 {
+    margin-bottom: 22px;
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: var(--transition);
+}
+@keyframes logoPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+}
+
+.logo-img {
+    height: 180px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.6));
+    opacity: 0.95;
+    transition: var(--transition);
+    animation: logoPulse 4s ease-in-out infinite;
+}
+.logo-1 {
+    margin-bottom: 45px; /* Aligns the drawing by shifting the image up */
+}
+.logo-img:hover {
+    opacity: 1;
+    filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.8)) brightness(1.1);
+}
+.nav-links { display: flex; align-items: center; gap: 20px; }
+.nav-links li { display: flex; align-items: center; }
+.nav-links li:not(:last-child)::after {
+    content: '|';
+    color: rgba(255, 255, 255, 0.35);
+    margin-left: 20px;
+    font-size: 0.8rem;
+    font-weight: 300;
+    pointer-events: none;
+}
 .nav-links a {
-    font-weight: 500; font-size: 0.9rem;
+    font-weight: 500; font-size: 0.8rem;
     color: var(--white); position: relative;
-    letter-spacing: 0.3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex; align-items: center; gap: 6px;
 }
+.nav-links a i { font-size: 0.9rem; color: var(--accent); }
 .nav-links a::after {
     content: ''; position: absolute; bottom: -6px; left: 0;
     width: 0; height: 2px; background: var(--accent);
@@ -225,83 +264,66 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .hero-slideshow::after {
     content: ''; position: absolute; inset: 0;
     background: linear-gradient(
-        180deg,
-        rgba(27, 53, 54, 0.55) 0%,
-        rgba(27, 53, 54, 0.2) 40%,
-        rgba(27, 53, 54, 0.6) 100%
+        90deg,
+        rgba(27, 53, 54, 0.75) 0%,
+        rgba(27, 53, 54, 0.55) 35%,
+        rgba(27, 53, 54, 0.1) 60%,
+        transparent 100%
     );
     z-index: 2;
 }
 
+.hero .container {
+    width: 100%;
+    max-width: none;
+    padding: 0 5%;
+}
+
 .hero-content {
-    position: relative; z-index: 3; max-width: 700px;
+    position: relative;
+    z-index: 3;
+    max-width: 550px;
+    text-align: left;
+    margin-top: 120px;
 }
 
-.hero-centered {
-    display: flex; flex-direction: column;
-    align-items: center; text-align: center;
-    max-width: 800px; margin: 0 auto;
-}
-
-.hero-logo {
-    width: 180px; height: 180px;
-    border-radius: 50%;
-    object-fit: contain;
-    margin-bottom: 30px;
-    opacity: 0; transform: scale(0.8);
-    background: rgba(255, 255, 255, 0.95);
-    padding: 15px;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
-    animation: heroLogoIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.3s, pulseHeroLogo 4s infinite alternate 1.3s;
-}
-
-@keyframes heroLogoIn {
-    to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes pulseHeroLogo {
-    0% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); transform: scale(1); }
-    100% { box-shadow: 0 0 50px rgba(255, 255, 255, 0.8); transform: scale(1.05); }
-}
-
-.hero-centered h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    line-height: 1.06; margin-bottom: 18px;
-    opacity: 0; transform: translateY(30px);
-    animation: heroFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.8s;
-}
-
-.hero-centered p {
-    font-size: 1.15rem; margin-bottom: 35px;
-    opacity: 0; transform: translateY(25px);
-    animation: heroFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.1s;
-    max-width: 520px; color: rgba(255,255,255,0.9);
-}
-
-.hero-centered .hero-btns {
-    justify-content: center;
-    opacity: 0; transform: translateY(25px);
-    animation: heroFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.4s;
-}
-
-.hero h1 {
-    font-size: clamp(2.8rem, 7vw, 5rem);
-    line-height: 1.06; margin-bottom: 22px;
-    opacity: 0; transform: translateY(40px);
+.hero-content h1 {
+    font-size: clamp(2.6rem, 5.8vw, 4.4rem);
+    line-height: 1.1;
+    margin-bottom: 22px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(40px);
     animation: heroFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
 }
 
-.hero p {
-    font-size: 1.15rem; margin-bottom: 35px;
-    opacity: 0; transform: translateY(30px);
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(30px);
     animation: heroFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.9s;
-    max-width: 520px; color: rgba(255,255,255,0.9);
 }
 
 .hero-btns {
-    display: flex; gap: 15px; flex-wrap: wrap;
-    opacity: 0; transform: translateY(30px);
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(30px);
     animation: heroFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.2s;
+}
+
+.hero-btns .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 @keyframes heroFadeUp {
@@ -310,18 +332,37 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 
 /* Hero dots */
 .hero-dots {
-    position: absolute; bottom: 40px; left: 50%;
-    transform: translateX(-50%); z-index: 4;
-    display: flex; gap: 10px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    display: flex;
+    gap: 10px;
 }
+
 .hero-dot {
-    width: 10px; height: 10px; border-radius: 50%;
-    background: rgba(255,255,255,0.4); border: none;
-    cursor: pointer; transition: var(--transition);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
 }
+
 .hero-dot.active {
-    background: var(--accent); width: 28px;
+    background: var(--accent);
+    width: 28px;
     border-radius: 10px;
+}
+
+.logo-separator {
+    width: 1px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin: 0 8px;
+    transition: var(--transition);
 }
 
 /* --- Section Titles --- */
@@ -358,6 +399,7 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 }
 
 .card-img { height: 220px; overflow: hidden; }
+.big-card .card-img { height: 280px; }
 .card-img img {
     width: 100%; height: 100%; object-fit: cover;
     transition: transform 0.7s ease;
@@ -447,7 +489,7 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 }
 .gallery-item:hover img { transform: scale(1.08); }
 
-/* --- CTA --- */
+/* --- CTA & Project Links --- */
 .cta-banner {
     background: linear-gradient(135deg, var(--primary-dark), var(--green-card));
     color: var(--white); border-radius: var(--radius-lg);
@@ -455,6 +497,41 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 }
 .cta-banner h2 { color: var(--white); margin-bottom: 12px; }
 .cta-banner p { color: rgba(255,255,255,0.8); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-pill);
+    color: var(--white);
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+.project-btn i {
+    font-size: 1.4rem;
+    color: var(--accent);
+}
+.project-btn:hover {
+    background: var(--white);
+    color: var(--primary-dark);
+    border-color: var(--white);
+    transform: translateY(-5px);
+}
+.project-btn:hover i {
+    color: var(--primary-dark);
+}
 
 /* --- Astro Section --- */
 .astro-section {
@@ -633,7 +710,10 @@ footer {
         transform: translateY(0);
         opacity: 1;
     }
+    .logo-img { height: 90px; }
+    .logo-separator { height: 50px; }
     .section-card { padding: 45px 22px; margin: 8px; border-radius: var(--radius-lg); }
+    .hero-content { max-width: 100%; }
     .menu-toggle { display: flex; }
     .nav-links { 
         position: absolute; top: 100%; left: 0; width: 100%;
@@ -644,6 +724,7 @@ footer {
         max-height: 0; overflow: hidden; opacity: 0;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
+    .nav-links li:not(:last-child)::after { display: none; }
     .nav-links.active {
         max-height: 400px; opacity: 1; padding: 30px;
     }

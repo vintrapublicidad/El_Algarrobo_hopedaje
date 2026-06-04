@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Viejo Algarrobo | Refugio de Campo - Tinogasta, Catamarca</title>
-    <meta name="description" content="Un refugio de campo pensado para relajarte en la Ruta del Adobe, Tinogasta, Catamarca. Astroturismo, cabañas equipadas y excursiones 4x4.">
+    <meta name="description"
+        content="Un refugio de campo pensado para relajarte en la Ruta del Adobe, Tinogasta, Catamarca. Astroturismo, cabañas equipadas y excursiones 4x4.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
     <header id="main-header">
-        <div class="container">
+        <div class="header-container">
             <nav>
-                <a href="index.html" class="logo"><img src="img/LOGO N.png" alt="El Viejo Algarrobo"></a>
+                <div class="logo-group">
+                    <a href="index.html">
+                        <img src="img/logo 1.png" alt="El Viejo Algarrobo" class="logo-img logo-1">
+                    </a>
+                    <div class="logo-separator"></div>
+                    <a href="excursiones.html">
+                        <img src="img/logo 2.png" alt="Excursiones" class="logo-img logo-2">
+                    </a>
+                </div>
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Hospedaje</a></li>
-                    <li><a href="excursiones.html"><i class="fas fa-compass"></i> Excursiones</a></li>
-                    <li><a href="#servicios"><i class="fas fa-concierge-bell"></i> Servicios</a></li>
-                    <li><a href="#booking"><i class="fas fa-calendar-check"></i> Reservar</a></li>
+                    <li><a href="index.html"><i class="fa-solid fa-bed"></i> Hospedaje</a></li>
+                    <li><a href="excursiones.html"><i class="fa-solid fa-map-location-dot"></i> Excursiones</a></li>
+                    <li><a href="#servicios"><i class="fa-solid fa-concierge-bell"></i> Servicios</a></li>
+                    <li><a href="#ubicacion"><i class="fa-regular fa-envelope"></i> Contáctanos</a></li>
+                    <li><a href="#booking"><i class="fa-regular fa-calendar-check"></i> Reservas</a></li>
                 </ul>
                 <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
                     <span></span><span></span><span></span>
                 </button>
-                <a href="#booking" class="btn btn-primary" style="font-size:0.82rem;">Reservar</a>
             </nav>
         </div>
     </header>
@@ -33,23 +44,51 @@
         <section class="hero">
             <div class="hero-slideshow">
                 <div class="hero-slide active">
-                    <img src="img/hospedaje/1.jpg" alt="El Viejo Algarrobo - Vista 1">
+                    <img src="img/Carrusel home/20250608_103853.jpg" alt="Vista 1">
                 </div>
                 <div class="hero-slide">
-                    <img src="img/hospedaje/2.jpg" alt="El Viejo Algarrobo - Vista 2">
+                    <img src="img/Carrusel home/20250914_211210.jpg" alt="Vista 2">
                 </div>
                 <div class="hero-slide">
-                    <img src="img/hospedaje/3.jpg" alt="El Viejo Algarrobo - Vista 3">
+                    <img src="img/Carrusel home/20250915_210612.jpg" alt="Vista 3">
+                </div>
+                <div class="hero-slide">
+                    <img src="img/Carrusel home/20251023_211422.jpg" alt="Vista 4">
+                </div>
+                <div class="hero-slide">
+                    <img src="img/Carrusel home/20251119_233030.jpg" alt="Vista 5" style="object-position: bottom;">
+                </div>
+                <div class="hero-slide">
+                    <img src="img/Carrusel home/20260109_201601.jpg" alt="Vista 6">
+                </div>
+                <div class="hero-slide">
+                    <img src="img/Carrusel home/20260206_165607.jpg" alt="Vista 7">
+                </div>
+                <div class="hero-slide">
+                    <img src="img/Carrusel home/20260218_203922.jpg" alt="Vista 8">
+                </div>
+                <div class="hero-slide">
+                    <img src="img/Carrusel home/20260218_204006.jpg" alt="Vista 9">
+                </div>
+                <div class="hero-slide">
+                    <img src="img/Carrusel home/20260218_204047.jpg" alt="Vista 10">
+                </div>
+                <div class="hero-slide">
+                    <img src="img/Carrusel home/20260218_204242.jpg" alt="Vista 11">
+                </div>
+                <div class="hero-slide">
+                    <img src="img/Carrusel home/20260311_201923.jpg" alt="Vista 12">
                 </div>
             </div>
             <div class="container">
-                <div class="hero-content hero-centered">
-                    <img src="img/LOGO N.png" alt="El Viejo Algarrobo" class="hero-logo">
-                    <h1>Acá el tiempo no corre… se disfruta.</h1>
-                    <p>Desconectate del estrés, respirá aire puro y reconectá con lo simple: naturaleza, silencio y cielos abiertos.</p>
+                <div class="hero-content">
+                    <h1>Acá el tiempo <br> no corre... se disfruta.</h1>
+                    <p>Hospedaje rural, astroturismo y excursiones 4x4 <br> para descubrir Tinogasta y el oeste
+                        catamarqueño.</p>
                     <div class="hero-btns">
-                        <a href="#about" class="btn btn-primary">Descubrí el Refugio</a>
-                        <a href="excursiones.html" class="btn btn-outline-light">Ver Excursiones</a>
+                        <a href="#about" class="btn btn-primary"><i class="fas fa-home"></i> Descubrí el Refugio</a>
+                        <a href="excursiones.html" class="btn btn-outline-light"><i class="fas fa-car"></i> Ver
+                            Excursiones</a>
                     </div>
                 </div>
             </div>
@@ -57,6 +96,74 @@
                 <button class="hero-dot active" data-slide="0"></button>
                 <button class="hero-dot" data-slide="1"></button>
                 <button class="hero-dot" data-slide="2"></button>
+                <button class="hero-dot" data-slide="3"></button>
+                <button class="hero-dot" data-slide="4"></button>
+                <button class="hero-dot" data-slide="5"></button>
+                <button class="hero-dot" data-slide="6"></button>
+                <button class="hero-dot" data-slide="7"></button>
+                <button class="hero-dot" data-slide="8"></button>
+                <button class="hero-dot" data-slide="9"></button>
+                <button class="hero-dot" data-slide="10"></button>
+                <button class="hero-dot" data-slide="11"></button>
+            </div>
+        </section>
+
+        <!-- Experiencias Principales -->
+        <section id="experiencias-principales" class="section-card section-card--white">
+            <div class="section-inner">
+                <div class="section-title reveal">
+                    <h2>Descubrí el encanto del oeste catamarqueño</h2>
+                    <p>Tres formas de vivir una experiencia inolvidable en El Viejo Algarrobo.</p>
+                </div>
+                <div class="cards-grid reveal-stagger">
+                    <div class="card big-card">
+                        <div class="card-img"><img src="img/hospedaje/700178798.jpg" alt="Hospedaje"></div>
+                        <div class="card-content">
+                            <h3 style="font-size: 1.6rem; color: var(--primary);">Hospedaje Rural</h3>
+                            <p>Hospedaje equipado con habitaciones y suites King Size para un descanso reparador, con
+                                desayuno y vistas
+                                espectaculares.</p>
+                            <a href="#about" class="btn btn-outline" style="margin-top: 10px;">Ver Opciones <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card big-card">
+                        <div class="card-img"><img src="img/DOBLETRACCION/excursiones.jpg" alt="Excursiones"></div>
+                        <div class="card-content">
+                            <h3 style="font-size: 1.6rem; color: var(--primary);">Excursiones 4x4</h3>
+                            <p>Recorré paisajes únicos, salares, dunas y caminos ocultos en vehículos todoterreno con
+                                guías locales.</p>
+                            <a href="excursiones.html" class="btn btn-outline" style="margin-top: 10px;">Conocé las
+                                Rutas <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="card big-card">
+                        <div class="card-img"><img src="img/ALGARROBO/astroturismo.jpeg" alt="Astroturismo"></div>
+                        <div class="card-content">
+                            <h3 style="font-size: 1.6rem; color: var(--primary);">Astroturismo & Experiencias</h3>
+                            <p>Contemplá los cielos más limpios del mundo y disfrutá de nuestra gastronomía regional
+                                casera.</p>
+                            <a href="#servicios" class="btn btn-outline" style="margin-top: 10px;">Descubrir Más <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyecta tu Viaje -->
+        <section id="proyecta-tu-viaje" class="cta-banner"
+            style="margin: 20px; border-radius: var(--radius-xl); padding-top: 70px; padding-bottom: 70px;">
+            <div class="section-inner">
+                <h2 style="font-size: 2.8rem; margin-bottom: 15px;">Proyectá tu viaje</h2>
+                <p style="font-size: 1.15rem; margin-bottom: 40px; color: rgba(255,255,255,0.9);">Organizá tu estadía
+                    seleccionando lo que más te interesa explorar de nuestro refugio.</p>
+                <div class="project-links reveal-stagger">
+                    <a href="#about" class="project-btn"><i class="fa-solid fa-bed"></i> Hospedaje</a>
+                    <a href="excursiones.html" class="project-btn"><i class="fa-solid fa-map-location-dot"></i>
+                        Excursiones</a>
+                    <a href="#servicios" class="project-btn"><i class="fa-solid fa-concierge-bell"></i> Servicios</a>
+                </div>
             </div>
         </section>
 
@@ -69,13 +176,28 @@
                     </div>
                     <div class="features-content reveal-right">
                         <h2 style="margin-bottom:15px;">Nuestra filosofía</h2>
-                        <p style="color:var(--text-light); margin-bottom:10px; font-style: italic; font-weight: 500;">"Quienes nos visitan vuelven por el silencio, la atención y la experiencia."</p>
-                        <p style="color:var(--text-light); margin-bottom:28px;">A solo minutos de Fiambalá, en plena Ruta del Adobe, te invitamos a disfrutar de un entorno único rodeado de montañas, historia y paisajes inolvidables.</p>
+                        <p style="color:var(--text-light); margin-bottom:10px; font-style: italic; font-weight: 500;">
+                            "Quienes nos visitan vuelven por el silencio, la atención y la experiencia."</p>
+                        <p style="color:var(--text-light); margin-bottom:28px;">A solo minutos de Fiambalá, en plena
+                            Ruta del Adobe, te invitamos a disfrutar de un entorno único rodeado de montañas, historia y
+                            paisajes inolvidables.</p>
                         <div class="features-list">
-                            <div class="feature-item"><i class="fas fa-mountain"></i><h4>Entorno Único</h4><p>Rodeado de montañas e historia.</p></div>
-                            <div class="feature-item"><i class="fas fa-star"></i><h4>Astroturismo</h4><p>Cielos limpios y brillantes.</p></div>
-                            <div class="feature-item"><i class="fas fa-bed"></i><h4>Confort Total</h4><p>Camas king size y suites equipadas.</p></div>
-                            <div class="feature-item"><i class="fas fa-mug-hot"></i><h4>Desayuno Incluido</h4><p>Para empezar bien cada día.</p></div>
+                            <div class="feature-item"><i class="fas fa-mountain"></i>
+                                <h4>Entorno Único</h4>
+                                <p>Rodeado de montañas e historia.</p>
+                            </div>
+                            <div class="feature-item"><i class="fas fa-star"></i>
+                                <h4>Astroturismo</h4>
+                                <p>Cielos limpios y brillantes.</p>
+                            </div>
+                            <div class="feature-item"><i class="fas fa-bed"></i>
+                                <h4>Confort Total</h4>
+                                <p>Camas king size y suites equipadas.</p>
+                            </div>
+                            <div class="feature-item"><i class="fas fa-mug-hot"></i>
+                                <h4>Desayuno Incluido</h4>
+                                <p>Para empezar bien cada día.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,7 +209,8 @@
             <div class="section-inner">
                 <div class="section-title reveal">
                     <h2>Descanso pensado en cada detalle.</h2>
-                    <p>Cabañas y suites diseñadas para quienes valoran la tranquilidad, el confort y una experiencia auténtica en Catamarca.</p>
+                    <p>Cabañas y suites diseñadas para quienes valoran la tranquilidad, el confort y una experiencia
+                        auténtica en Catamarca.</p>
                 </div>
                 <div class="cards-grid reveal-stagger">
                     <div class="card">
@@ -95,7 +218,8 @@
                         <div class="card-content">
                             <h3>Cabañas Equipadas</h3>
                             <p>4 cabañas totalmente preparadas con todo lo que necesitás.</p>
-                            <div class="card-tags"><span class="tag">Aire Acondicionado</span><span class="tag">WiFi</span><span class="tag">DirecTV</span></div>
+                            <div class="card-tags"><span class="tag">Aire Acondicionado</span><span
+                                    class="tag">WiFi</span><span class="tag">DirecTV</span></div>
                         </div>
                     </div>
                     <div class="card">
@@ -103,7 +227,8 @@
                         <div class="card-content">
                             <h3>Habitaciones Suites</h3>
                             <p>El máximo confort con camas King Size y duchas integradas.</p>
-                            <div class="card-tags"><span class="tag">Cama King Size</span><span class="tag">Frigobar</span><span class="tag">Pava Eléctrica</span></div>
+                            <div class="card-tags"><span class="tag">Cama King Size</span><span
+                                    class="tag">Frigobar</span><span class="tag">Pava Eléctrica</span></div>
                         </div>
                     </div>
                     <div class="card">
@@ -111,7 +236,8 @@
                         <div class="card-content">
                             <h3>Espacios de Relax</h3>
                             <p>Zona de sillones con mesa y descanso fuera de la cabaña.</p>
-                            <div class="card-tags"><span class="tag">Zona de Descanso</span><span class="tag">Silencio</span></div>
+                            <div class="card-tags"><span class="tag">Zona de Descanso</span><span
+                                    class="tag">Silencio</span></div>
                         </div>
                     </div>
                     <div class="card">
@@ -119,7 +245,8 @@
                         <div class="card-content">
                             <h3>Habitaciones Privadas</h3>
                             <p>Intimidad y confort con baño privado y todas las comodidades.</p>
-                            <div class="card-tags"><span class="tag">Baño Privado</span><span class="tag">Calefacción</span></div>
+                            <div class="card-tags"><span class="tag">Baño Privado</span><span
+                                    class="tag">Calefacción</span></div>
                         </div>
                     </div>
                 </div>
@@ -134,14 +261,30 @@
                     <p>Servicios e instalaciones pensados para que tu estadía sea perfecta.</p>
                 </div>
                 <div class="services-grid reveal-stagger">
-                    <div class="service-item"><i class="fas fa-swimming-pool"></i><h4>Pileta</h4></div>
-                    <div class="service-item"><i class="fas fa-coffee"></i><h4>Desayuno Incluido</h4></div>
-                    <div class="service-item"><i class="fas fa-wifi"></i><h4>WiFi Gratis</h4></div>
-                    <div class="service-item"><i class="fas fa-parking"></i><h4>Estacionamiento</h4></div>
-                    <div class="service-item"><i class="fas fa-broom"></i><h4>Limpieza</h4></div>
-                    <div class="service-item"><i class="fas fa-wheat-awn"></i><h4>Sin TACC</h4></div>
-                    <div class="service-item"><i class="fas fa-snowflake"></i><h4>Aire Acondicionado</h4></div>
-                    <div class="service-item"><i class="fas fa-tv"></i><h4>DirecTV</h4></div>
+                    <div class="service-item"><i class="fas fa-swimming-pool"></i>
+                        <h4>Pileta</h4>
+                    </div>
+                    <div class="service-item"><i class="fas fa-coffee"></i>
+                        <h4>Desayuno Incluido</h4>
+                    </div>
+                    <div class="service-item"><i class="fas fa-wifi"></i>
+                        <h4>WiFi Gratis</h4>
+                    </div>
+                    <div class="service-item"><i class="fas fa-parking"></i>
+                        <h4>Estacionamiento</h4>
+                    </div>
+                    <div class="service-item"><i class="fas fa-broom"></i>
+                        <h4>Limpieza</h4>
+                    </div>
+                    <div class="service-item"><i class="fas fa-wheat-awn"></i>
+                        <h4>Sin TACC</h4>
+                    </div>
+                    <div class="service-item"><i class="fas fa-snowflake"></i>
+                        <h4>Aire Acondicionado</h4>
+                    </div>
+                    <div class="service-item"><i class="fas fa-tv"></i>
+                        <h4>DirecTV</h4>
+                    </div>
                 </div>
             </div>
         </section>
@@ -151,63 +294,72 @@
             <div class="section-inner">
                 <div class="section-title reveal">
                     <h2>Sabores de nuestra tierra</h2>
-                    <p>Degustá platos regionales preparados especialmente para nuestros huéspedes. Gastronomía auténtica con alternativas sin TACC. <em>(Consultar disponibilidad)</em></p>
+                    <p>Degustá platos regionales preparados especialmente para nuestros huéspedes. Gastronomía auténtica
+                        con alternativas sin TACC. <em>(Consultar disponibilidad)</em></p>
                 </div>
                 <div class="cards-grid reveal-stagger">
                     <div class="card">
                         <div class="card-img"><img src="img/comidas/528621995.jpg" alt="Locro tradicional"></div>
                         <div class="card-content">
                             <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Locro Tradicional</h3>
-                            <p style="font-size: 0.85rem; margin-bottom: 0;">Un clásico infaltable de nuestra región, ideal para reconfortar el cuerpo.</p>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Un clásico infaltable de nuestra región,
+                                ideal para reconfortar el cuerpo.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-img"><img src="img/comidas/557886529.jpg" alt="Empanadas caseras"></div>
                         <div class="card-content">
                             <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Empanadas Caseras</h3>
-                            <p style="font-size: 0.85rem; margin-bottom: 0;">Hechas a mano con receta de la casa, jugosas y al horno.</p>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Hechas a mano con receta de la casa,
+                                jugosas y al horno.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-img"><img src="img/comidas/un.webp" alt="Desayuno Regional"></div>
                         <div class="card-content">
                             <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Desayuno Regional</h3>
-                            <p style="font-size: 0.85rem; margin-bottom: 0;">Pan casero, dulces artesanales y mates para empezar el día.</p>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Pan casero, dulces artesanales y mates para
+                                empezar el día.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-img"><img src="img/comidas/unnamed (1).webp" alt="Opciones sin TACC"></div>
                         <div class="card-content">
                             <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Opciones sin TACC</h3>
-                            <p style="font-size: 0.85rem; margin-bottom: 0;">Platos regionales adaptados, seguros y llenos de sabor.</p>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Platos regionales adaptados, seguros y
+                                llenos de sabor.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-img"><img src="img/comidas/unnamed (2).webp" alt="Vinos de Altura"></div>
                         <div class="card-content">
                             <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Vinos de Altura</h3>
-                            <p style="font-size: 0.85rem; margin-bottom: 0;">Acompañá tus comidas con la mejor selección de bodegas locales.</p>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Acompañá tus comidas con la mejor selección
+                                de bodegas locales.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-img"><img src="img/comidas/unnamed (3).webp" alt="Empanadas Fritas"></div>
                         <div class="card-content">
                             <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Empanadas Fritas</h3>
-                            <p style="font-size: 0.85rem; margin-bottom: 0;">Un clásico catamarqueño, crujientes y hechas en el momento.</p>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Un clásico catamarqueño, crujientes y
+                                hechas en el momento.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-img"><img src="img/comidas/unnamed (4).webp" alt="Comidas de Estación"></div>
                         <div class="card-content">
                             <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Comidas de Estación</h3>
-                            <p style="font-size: 0.85rem; margin-bottom: 0;">Recetas preparadas con ingredientes frescos y de temporada.</p>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Recetas preparadas con ingredientes frescos
+                                y de temporada.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-img"><img src="img/comidas/unnamed.webp" alt="Merienda al aire libre"></div>
                         <div class="card-content">
                             <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Merienda al aire libre</h3>
-                            <p style="font-size: 0.85rem; margin-bottom: 0;">Disfrutá la tarde en nuestro predio con infusiones y cosas ricas.</p>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Disfrutá la tarde en nuestro predio con
+                                infusiones y cosas ricas.</p>
                         </div>
                     </div>
                 </div>
@@ -270,8 +422,10 @@
                 <div class="features-split">
                     <div class="features-content reveal-left">
                         <h2 style="margin-bottom:15px;">Dónde encontrarnos</h2>
-                        <p style="color:var(--text-light); margin-bottom:20px;">Estamos ubicados en Tinogasta, sobre la histórica Ruta del Adobe y a minutos de Fiambalá. Un punto estratégico para comenzar tu aventura en Catamarca.</p>
-                        
+                        <p style="color:var(--text-light); margin-bottom:20px;">Estamos ubicados en Tinogasta, sobre la
+                            histórica Ruta del Adobe y a minutos de Fiambalá. Un punto estratégico para comenzar tu
+                            aventura en Catamarca.</p>
+
                         <div class="location-details">
                             <div class="loc-item">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -289,11 +443,14 @@
                             </div>
                         </div>
                         <br>
-                        <a href="https://maps.app.goo.gl/uXpUaX2cR9K3qA5n8" target="_blank" class="btn btn-outline animate-pulse-slow">Abrir en Google Maps</a>
+                        <a href="https://maps.app.goo.gl/uXpUaX2cR9K3qA5n8" target="_blank"
+                            class="btn btn-outline animate-pulse-slow">Abrir en Google Maps</a>
                     </div>
                     <div class="features-img reveal-right">
                         <div class="map-container organic-shape">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3525.6239161207604!2d-67.62486712452521!3d-27.913512176065037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x969e17b7afe2ca85%3A0xfc14e283d974351d!2sEL%20VIEJO%20ALGARROBO!5e0!3m2!1ses!2sar!4v1777927478155!5m2!1ses!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3525.6239161207604!2d-67.62486712452521!3d-27.913512176065037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x969e17b7afe2ca85%3A0xfc14e283d974351d!2sEL%20VIEJO%20ALGARROBO!5e0!3m2!1ses!2sar!4v1777927478155!5m2!1ses!2sar"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             <div class="map-badge animate-bounce-soft">
                                 <i class="fas fa-location-dot"></i> El Viejo Algarrobo
                             </div>
@@ -311,7 +468,8 @@
                     <img src="img/LOGO N.png" alt="Logo">
                     <p>Refugio de Campo & Astroturismo</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/elviejoalgarrobotinogasta/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/elviejoalgarrobotinogasta/" target="_blank"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
@@ -348,4 +506,5 @@
 
     <script src="main.js"></script>
 </body>
+
 </html>
